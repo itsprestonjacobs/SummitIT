@@ -1,0 +1,14 @@
+# Cloudflare Worker config for the Summit IT chat proxy.
+# Deploy with:  wrangler deploy   (see ../SETUP.md)
+
+name = "summit-it-chat"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# The Anthropic API key is a SECRET — never put it in this file or in git.
+# Set it once with:
+#   wrangler secret put ANTHROPIC_API_KEY
+#
+# For local development (wrangler dev), create worker/.dev.vars with:
+#   ANTHROPIC_API_KEY=sk-ant-...
+# (.dev.vars is git-ignored.)

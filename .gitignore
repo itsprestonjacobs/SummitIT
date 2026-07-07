@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Cloudflare Wrangler
+worker/.wrangler/
+worker/.dev.vars
+.dev.vars
+
+# Secrets — never commit these
+*.env
+.env
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log

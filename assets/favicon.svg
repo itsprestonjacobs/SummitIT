@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Summit IT">
+  <rect width="64" height="64" rx="12" fill="#182A46"/>
+  <path d="M 14 40 A 20 20 0 0 1 50 40" fill="none" stroke="#1F5DBE" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="10,52 22,36 27,42 34,24 42,38 47,32 54,52" fill="#EDF1F6"/>
+  <polygon points="34,24 29,40 34,36 39,40" fill="#1F5DBE"/>
+  <g fill="none" stroke="#1F5DBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 24 48 H 34 L 39 43 H 50"/>
+  </g>
+  <circle cx="24" cy="48" r="2.2" fill="#EDF1F6"/>
+  <circle cx="50" cy="43" r="2.2" fill="#EDF1F6"/>
+</svg>

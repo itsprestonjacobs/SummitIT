@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 104" role="img" aria-label="Summit IT mountain mark">
+  <!-- Summit arc -->
+  <path d="M 22 60 A 46 46 0 0 1 106 60" fill="none" stroke="#1F5DBE" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Mountain range -->
+  <polygon points="12,92 30,66 38,74 50,44 58,60 70,20 88,56 98,46 116,92" fill="#182A46"/>
+
+  <!-- Snow caps -->
+  <polygon points="70,20 60,46 70,40 80,46" fill="#EDF1F6"/>
+  <polygon points="50,44 43,60 50,55 57,60" fill="#EDF1F6"/>
+  <polygon points="98,46 91,60 98,55 105,60" fill="#EDF1F6"/>
+
+  <!-- Circuit traces -->
+  <g fill="none" stroke="#9FC0EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 40 84 H 66 L 74 76 H 98"/>
+    <path d="M 54 90 H 82 L 88 84 H 100"/>
+  </g>
+  <g fill="#EDF1F6">
+    <circle cx="40" cy="84" r="2.6"/>
+    <circle cx="98" cy="76" r="2.6"/>
+    <circle cx="54" cy="90" r="2.6"/>
+    <circle cx="100" cy="84" r="2.6"/>
+  </g>
+</svg>
