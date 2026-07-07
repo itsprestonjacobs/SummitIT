@@ -223,6 +223,15 @@ article.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); 
 .team-card__role { color: var(--blue); font-weight: 700; font-size: .92rem; margin: 0 0 .5rem; }
 .team-card p:last-child { color: var(--gray); margin: 0; }
 
+/* ---------- who we are ---------- */
+.who-story { max-width: 760px; margin: 0 auto clamp(2.4rem, 5vw, 3.4rem); text-align: center; }
+.who-story p { color: var(--gray); font-size: 1.06rem; }
+.who-story p:last-child { margin-bottom: 0; }
+.values { margin-bottom: clamp(2.6rem, 5vw, 3.6rem); }
+.value { text-align: center; }
+.value .card__icon { margin-left: auto; margin-right: auto; }
+.subhead { text-align: center; font-size: clamp(1.35rem, 2.6vw, 1.6rem); margin: 0 0 1.5rem; }
+
 /* ---------- contact / form ---------- */
 .contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.6rem; align-items: start; }
 .schedule-form { display: grid; gap: 1rem; }
