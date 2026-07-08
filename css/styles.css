@@ -308,6 +308,9 @@ article.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); 
   box-shadow: var(--shadow-lg);
   animation: chatIn .18s ease;
 }
+/* The [hidden] attribute must beat the display:flex above, or the panel
+   never hides (and the X can't close it). */
+.chat__panel[hidden] { display: none; }
 @keyframes chatIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
 .chat__header { display: flex; align-items: center; justify-content: space-between; gap: .6rem;

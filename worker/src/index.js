@@ -14,12 +14,13 @@
    Then copy the printed *.workers.dev URL into js/config.js.
    ============================================================ */
 
-// Support bots handle "simple problems" — Haiku 4.5 is a great fit and is
-// ~5x cheaper than Opus ($1/$5 vs $5/$25 per 1M tokens). To switch, change
-// this one line to "claude-haiku-4-5".
-const MODEL = "claude-opus-4-8";
+// Support bots handle "simple problems", so this uses Haiku 4.5 — fast and
+// ~5x cheaper than Opus ($1/$5 vs $5/$25 per 1M tokens). For higher-quality
+// answers at higher cost, change this one line to "claude-opus-4-8".
+const MODEL = "claude-haiku-4-5";
 
-const MAX_TOKENS = 800;
+// Keep replies short to control cost. Bump this if answers get cut off.
+const MAX_TOKENS = 500;
 
 // Origins allowed to call this worker. Add your custom domain here later.
 const ALLOWED = [
@@ -40,7 +41,7 @@ const SYSTEM_PROMPT = [
   "call with Summit IT — on a video call they can show the device on camera and the team fixes it",
   "live. Point them to the \"Book a call\" button / the scheduling form on the page.",
   "",
-  "Keep replies short (a few sentences), practical, and encouraging. Stay on IT-support topics;",
+  "Keep replies very short — 2 to 4 sentences, no long lists — practical and encouraging. Stay on IT-support topics;",
   "if asked something unrelated, gently steer back. Never invent prices, guarantees, or personal data.",
 ].join("\n");
 
@@ -88,7 +89,7 @@ export default {
     msgs = msgs
       .filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
       .map((m) => ({ role: m.role, content: m.content.slice(0, 4000) }))
-      .slice(-20);
+      .slice(-10); // only send recent turns — cheaper input tokens
 
     // Anthropic requires the first message to be a user turn.
     while (msgs.length && msgs[0].role === "assistant") msgs.shift();

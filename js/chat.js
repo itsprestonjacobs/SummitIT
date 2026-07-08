@@ -24,6 +24,8 @@
   var history = [];        // [{role:'user'|'assistant', content:string}]
   var started = false;
   var sending = false;
+  var userMsgCount = 0;    // per-session cap to keep API costs predictable
+  var MSG_LIMIT = 20;
 
   var GREETING = "Hi! I'm the Summit IT assistant. Tell me what's going on with your device or " +
     "network and I'll help with the quick fixes. If it needs a closer look, I'll help you book a call.";
@@ -101,6 +103,11 @@
     e.preventDefault();
     var text = (input.value || "").trim();
     if (!text || sending) return;
+    if (userMsgCount >= MSG_LIMIT) {
+      addBot("We've covered a lot here! The best next step is a quick call — tap “Book a call” below and we'll pick it up from there.");
+      return;
+    }
+    userMsgCount++;
     input.value = "";
     addUser(text);
     respond();
